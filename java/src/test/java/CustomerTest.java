@@ -11,8 +11,8 @@ class CustomerTest {
         customer.addRental(new Rental(new Movie("Golden Eye", Movie.REGULAR), 3));
         customer.addRental(new Rental(new Movie("Short New", Movie.NEW_RELEASE), 1));
         customer.addRental(new Rental(new Movie("Long New", Movie.NEW_RELEASE), 2));
-        customer.addRental(new Rental(new Movie("Bambi", Movie.CHILDRENS), 3));
-        customer.addRental(new Rental(new Movie("Toy Story", Movie.CHILDRENS), 4));
+        customer.addRental(new Rental(new Movie("Bambi", Movie.CHILDREN), 3));
+        customer.addRental(new Rental(new Movie("Toy Story", Movie.CHILDREN), 4));
 
         String expected = "" +
                 "Rental Record for Bob\n" +
@@ -25,6 +25,16 @@ class CustomerTest {
                 "Amount owed is 19.0\n" +
                 "You earned 7 frequent renter points";
 
+
         assertEquals(expected, customer.statement());
     }
+
+    @Test
+    public void test2(){
+        Movie m = new Movie("title", 2);
+        m.setPriceCode(1);
+
+        assertEquals(1, m.getPriceCode());
+    }
+
 }

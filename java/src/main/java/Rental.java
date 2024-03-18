@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * The rental class represents a customer renting a movie.
  */
@@ -18,4 +20,6 @@ public class Rental {
     public Movie getMovie() {
         return _movie;
     }
+
+
 }
